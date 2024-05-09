@@ -1,5 +1,3 @@
-
-
 def insertion_sort(list_: list):
     count = len(list_)
     if count < 2:
