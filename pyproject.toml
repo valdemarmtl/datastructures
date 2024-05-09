@@ -1,3 +1,12 @@
 [build-system]
 requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
+
+[pytest]
+markers =
+    timeout: Mark test waiting for timeout to occur.
+
+python_files = *_test.py
+
+addopts =
+    --strict-markers
