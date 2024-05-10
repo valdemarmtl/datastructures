@@ -5,8 +5,7 @@ def list_swap(list_: list, index_1: int, index_2: int):
 
 def bubble_sort(list_: list):
     count = len(list_)
-    for i in range(count-1):
-        print(list_)
+    for _ in range(count-1):
         swapped = False
         for j in range(count-1):
             if list_[j] > list_[j+1]:
@@ -14,9 +13,9 @@ def bubble_sort(list_: list):
                 swapped = True
         if not swapped:
             break
-    print(list_)
 
 
 if __name__ == "__main__":
     list_of_elements = [40, 30, 10, 50, 20]
     bubble_sort(list_of_elements)
+    print("Sorted list: ", list_of_elements)
