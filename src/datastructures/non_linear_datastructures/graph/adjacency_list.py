@@ -25,3 +25,10 @@ class AdjacencyList:
         except ValueError:
             print("No edge between %d and %d" % (vertex1, vertex2))
 
+    def display(self):
+        for vertex in range(self.total_vertices):
+            print(vertex, end=' -> ')
+            for neighbor in self.list_[vertex]:
+                print(neighbor, end=' ')
+            print()
+
