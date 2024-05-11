@@ -10,3 +10,10 @@ class AdjacencyMatrix:
         self.matrix[vertex1][vertex2] = 1
         self.matrix[vertex2][vertex1] = 1
 
+    def remove_edge(self, vertex1, vertex2):
+        if self.matrix[vertex1][vertex2] == 0:
+            print("No edge between %d and %d" % (vertex1, vertex2))
+            return
+        self.matrix[vertex1][vertex2] = 0
+        self.matrix[vertex2][vertex1] = 0
+
