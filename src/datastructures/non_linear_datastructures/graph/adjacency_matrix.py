@@ -24,3 +24,9 @@ class AdjacencyMatrix:
             print()
 
 
+if __name__ == '__main__':
+    list_of_edges = [(0, 1), (0, 2), (0, 3), (1, 3), (1, 4), (2, 3), (3, 3), (3, 4)]
+    adjacency_matrix = AdjacencyMatrix(5)
+    for edge in list_of_edges:
+        adjacency_matrix.add_edge(*edge)
+    adjacency_matrix.print_matrix()
