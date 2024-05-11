@@ -5,6 +5,9 @@ class AdjacencyList:
         self.total_vertices = total_vertices
         self.list_ = [[] for _ in range(total_vertices)]
 
+    def add_edge(self, vertex1: int, vertex2: int):
+        self.add_undirected_edge(vertex1, vertex2)
+
     def add_directed_edge(self, vertex1: int, vertex2: int):
         try:
             self.list_[vertex1].index(vertex2)
