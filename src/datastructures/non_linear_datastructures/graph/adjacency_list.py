@@ -19,3 +19,9 @@ class AdjacencyList:
         self.add_directed_edge(vertex1, vertex2)
         self.add_directed_edge(vertex2, vertex1)
 
+    def remove_edge(self, vertex1: int, vertex2: int):
+        try:
+            self.list_[vertex1].remove(vertex2)
+        except ValueError:
+            print("No edge between %d and %d" % (vertex1, vertex2))
+
