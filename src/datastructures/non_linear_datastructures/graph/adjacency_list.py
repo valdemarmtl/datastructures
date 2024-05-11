@@ -1,3 +1,10 @@
+'''
+In python we can represent the adjacency list as an list of lists, 
+where each index in the outer is all the vertices.
+And inside each vertex list, is the vertices it is connected to.
+We can also make an edge vector of two indices, 
+where index1 is start and index2 is end.
+'''
 
 
 class AdjacencyList:
