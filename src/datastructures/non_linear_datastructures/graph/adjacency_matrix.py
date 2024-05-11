@@ -17,3 +17,10 @@ class AdjacencyMatrix:
         self.matrix[vertex1][vertex2] = 0
         self.matrix[vertex2][vertex1] = 0
 
+    def print_matrix(self):
+        for row in self.matrix:
+            for value in row:
+                print('{:4}'.format(value), end=' ')
+            print()
+
+
