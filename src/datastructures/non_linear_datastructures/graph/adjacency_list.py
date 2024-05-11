@@ -32,3 +32,10 @@ class AdjacencyList:
                 print(neighbor, end=' ')
             print()
 
+
+if __name__ == '__main__':
+    list_of_edges = [(0, 1), (0, 2), (1, 3), (1, 4), (2, 3), (3, 0), (3, 3), (3, 4)]
+    adjacency_list = AdjacencyList(5)
+    for edge in list_of_edges:
+        adjacency_list.add_directed_edge(*edge)
+    adjacency_list.display()
