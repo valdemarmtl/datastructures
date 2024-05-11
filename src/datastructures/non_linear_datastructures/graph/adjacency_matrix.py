@@ -1,3 +1,9 @@
+'''
+In python we can represent the adjacency matrix as an list of lists, 
+where each cell is an number either zero or one.
+We can also make an edge a set of indexes for the matrix.
+'''
+
 
 class AdjacencyMatrix:
     def __init__(self, total_vertices):
