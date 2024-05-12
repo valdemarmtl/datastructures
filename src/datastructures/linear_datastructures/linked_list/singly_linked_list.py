@@ -21,3 +21,8 @@ class SinglyLinkedList:
         while last_node.next:
             last_node = last_node.next
         last_node.next = new_node
+
+    def prepend(self, data: object):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
