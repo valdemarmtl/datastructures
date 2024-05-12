@@ -71,6 +71,29 @@ class DoublyLinkedList:
             current_node.next.prev = prev_node
         current_node = None
 
+    def delete_node_index(self, index: int):
+        current_node = self.head
+        if current_node and index == 0:
+            if not current_node.next:
+                self._reset_list()
+            else:
+                self._delete_head()
+            current_node = None
+            return
+        count = 0
+        while current_node and count != index:
+            prev_node = current_node
+            current_node = current_node.next
+            count += 1
+        if current_node is None:
+            return
+        if current_node is self.tail:
+            self._delete_tail()
+        else:
+            prev_node.next = current_node.next
+            current_node.next.prev = prev_node
+        current_node = None
+
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
