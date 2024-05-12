@@ -78,3 +78,12 @@ class TestDoublyLinkedList:
         assert linked_list.head is None
         assert linked_list.tail is None
 
+    def test_get_key(self):
+        linked_list = DoublyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        node = linked_list.get_key(2)
+        assert node.data == 2
+        assert isinstance(node, Node)
+
