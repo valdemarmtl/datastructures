@@ -79,6 +79,15 @@ class SinglyLinkedList:
             current_node = current_node.next
             count += 1
         return current_node.data if current_node else None
+
+    def get_node(self, pos: int) -> Optional[Node]:
+        current_node = self.head
+        count = 0
+        while current_node and count != pos:
+            current_node = current_node.next
+            count += 1
+        return current_node
+
     def len_iterative(self) -> int:
         count = 0
         current_node = self.head
