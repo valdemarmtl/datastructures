@@ -52,3 +52,10 @@ class TestSinglyLinkedList:
         linked_list.delete_node_at_pos(1)
         node = linked_list.get_node(1)
         assert node.data == 3
+
+    def test_len_iterative(self):
+        linked_list = SinglyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        assert linked_list.len_iterative() == 3
