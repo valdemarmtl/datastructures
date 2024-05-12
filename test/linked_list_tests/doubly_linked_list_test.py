@@ -57,3 +57,18 @@ class TestDoublyLinkedList:
         assert linked_list.head is None
         assert linked_list.tail is None
 
+    def test_delete_node_index(self):
+        linked_list = DoublyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        linked_list.delete_node_index(1)
+        node = linked_list.get_index(1)
+        assert node.data == 3
+        linked_list.delete_node_index(0)
+        assert linked_list.head.data == 3
+        assert linked_list.tail.data == 3
+        linked_list.delete_node_index(0)
+        assert linked_list.head is None
+        assert linked_list.tail is None
+
