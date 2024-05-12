@@ -101,6 +101,17 @@ class DoublyLinkedList:
         if data_only and current_node:
             return current_node.data
         return current_node
+
+    def get_index(self, index: int, data_only: bool = False) -> Optional[Node] | object:
+        current_node = self.head
+        count = 0
+        while current_node and count != index:
+            current_node = current_node.next
+            count += 1
+        if data_only and current_node:
+            return current_node.data
+        return current_node
+
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
