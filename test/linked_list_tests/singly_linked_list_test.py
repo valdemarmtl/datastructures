@@ -53,6 +53,10 @@ class TestSinglyLinkedList:
         node = linked_list.get_index(1)
         assert node.data == 3
 
+    def test_delete_node__empty(self):
+        linked_list = SinglyLinkedList()
+        linked_list.delete_node(1)
+        assert linked_list.head is None
 
     def test_get_index(self):
         linked_list = SinglyLinkedList()
