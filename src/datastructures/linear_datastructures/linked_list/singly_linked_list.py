@@ -8,7 +8,6 @@ class Node:
 
 
 class SinglyLinkedList:
-
     def __init__(self):
         self.head: Optional[Node] = None
 
