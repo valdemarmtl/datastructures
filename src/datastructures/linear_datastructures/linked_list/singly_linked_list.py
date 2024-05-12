@@ -27,14 +27,14 @@ class SinglyLinkedList:
         new_node.next = self.head
         self.head = new_node
 
-    def insert_node_at_pos(self, pos: int, data: object):
-        if self.head is None or pos == 0:
+    def insert_node_at_index(self, index: int, data: object):
+        if self.head is None or index == 0:
             self.prepend(data)
             return
         new_node = Node(data)
         current_node = self.head
         count = 0
-        while current_node and count != pos:
+        while current_node and count != index:
             prev_node = current_node
             current_node = current_node.next
             count += 1
@@ -55,15 +55,15 @@ class SinglyLinkedList:
         prev_node.next = current_node.next
         current_node = None
 
-    def delete_node_at_pos(self, pos: int):
+    def delete_node_at_pos(self, index: int):
         if self.head:
             current_node = self.head
-            if pos == 0:
+            if index == 0:
                 self.head = current_node.next
                 current_node = None
                 return
             count = 0
-            while current_node and count != pos:
+            while current_node and count != index:
                 prev_node = current_node
                 current_node = current_node.next
                 count += 1
@@ -72,18 +72,18 @@ class SinglyLinkedList:
             prev_node.next = current_node.next
             current_node = None
 
-    def get(self, pos: int) -> Optional[object]:
+    def get(self, index: int) -> Optional[object]:
         current_node = self.head
         count = 0
-        while current_node and count != pos:
+        while current_node and count != index:
             current_node = current_node.next
             count += 1
         return current_node.data if current_node else None
 
-    def get_node(self, pos: int) -> Optional[Node]:
+    def get_node(self, index: int) -> Optional[Node]:
         current_node = self.head
         count = 0
-        while current_node and count != pos:
+        while current_node and count != index:
             current_node = current_node.next
             count += 1
         return current_node
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     linked_list.print_list()
     linked_list.prepend("E")
     linked_list.print_list()
-    linked_list.insert_node_at_pos(1, "F")
+    linked_list.insert_node_at_index(1, "F")
     linked_list.print_list()
     linked_list.delete_node("B")
     linked_list.print_list()
