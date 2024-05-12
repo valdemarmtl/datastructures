@@ -129,3 +129,7 @@ class TestDoublyLinkedList:
         linked_list.append(3)
         assert linked_list.len_iterative() == 3
 
+    def test_len_iterative__empty(self):
+        linked_list = DoublyLinkedList()
+        assert linked_list.len_iterative() == 0
+
