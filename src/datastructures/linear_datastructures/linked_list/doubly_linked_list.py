@@ -132,6 +132,18 @@ class DoublyLinkedList:
             current_node = current_node.next
         print("None")
 
+    def _reset_list(self):
+        self.head = None
+        self.tail = None
+
+    def _delete_head(self):
+        self.head = self.head.next
+        self.head.prev = None
+
+    def _delete_tail(self):
+        self.tail = self.tail.prev
+        self.tail.next = None
+
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
