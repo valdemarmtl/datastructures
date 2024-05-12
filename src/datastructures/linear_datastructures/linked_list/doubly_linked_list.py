@@ -120,6 +120,11 @@ class DoublyLinkedList:
             current_node = current_node.next
         return count
 
+    def len_recursive(self, node: Optional[Node]) -> int:
+        if node is None:
+            return 0
+        return 1 + self.len_recursive(node.next)
+
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
