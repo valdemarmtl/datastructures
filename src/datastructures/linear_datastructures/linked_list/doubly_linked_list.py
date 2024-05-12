@@ -31,6 +31,25 @@ class DoublyLinkedList:
         self.head.prev = new_node
         self.head = new_node
 
+    def insert_node_index(self, index: int, data: object):
+        if self.head is None or index == 0:
+            self.prepend(data)
+            return
+        new_node = Node(data)
+        current_node = self.head
+        count = 0
+        while current_node and count != index:
+            prev_node = current_node
+            current_node = current_node.next
+            count += 1
+        if prev_node is self.tail:
+            self.append(data)
+        else:
+            prev_node.next = new_node
+            new_node.prev = prev_node
+            new_node.next = current_node
+            current_node.prev = new_node
+
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
