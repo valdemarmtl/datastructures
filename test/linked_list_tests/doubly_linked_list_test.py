@@ -20,3 +20,10 @@ class TestDoublyLinkedList:
         linked_list.prepend(3)
         assert linked_list.head.data == 3
 
+    def test_insert_at_end(self):
+        linked_list = DoublyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        assert linked_list.tail.data == 3
+
