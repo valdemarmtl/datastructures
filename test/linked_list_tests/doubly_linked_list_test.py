@@ -100,3 +100,12 @@ class TestDoublyLinkedList:
         assert data == 2
         assert isinstance(data, object)
 
+    def test_get_index(self):
+        linked_list = DoublyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        node = linked_list.get_index(1)
+        assert node.data == 2
+        assert isinstance(node, Node)
+
