@@ -109,3 +109,7 @@ class TestDoublyLinkedList:
         assert node.data == 2
         assert isinstance(node, Node)
 
+    def test_get_index__empty(self):
+        linked_list = DoublyLinkedList()
+        assert linked_list.get_index(1) is None
+
