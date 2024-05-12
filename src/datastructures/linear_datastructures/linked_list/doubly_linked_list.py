@@ -112,6 +112,14 @@ class DoublyLinkedList:
             return current_node.data
         return current_node
 
+    def len_iterative(self) -> int:
+        count = 0
+        current_node = self.head
+        while current_node:
+            count += 1
+            current_node = current_node.next
+        return count
+
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
