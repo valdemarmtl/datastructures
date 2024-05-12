@@ -26,7 +26,7 @@ class SinglyLinkedList:
         new_node.next = self.head
         self.head = new_node
 
-    def insert_node_at_index(self, index: int, data: object):
+    def insert_node_index(self, index: int, data: object):
         if self.head is None or index == 0:
             self.prepend(data)
             return
@@ -54,7 +54,7 @@ class SinglyLinkedList:
         prev_node.next = current_node.next
         current_node = None
 
-    def delete_node_at_pos(self, index: int):
+    def delete_node_index(self, index: int):
         if self.head:
             current_node = self.head
             if index == 0:
@@ -71,20 +71,22 @@ class SinglyLinkedList:
             prev_node.next = current_node.next
             current_node = None
 
-    def get(self, index: int) -> Optional[object]:
+    def get_index(self, index: int, data_only: bool = False) -> Optional[Node] | object:
         current_node = self.head
         count = 0
         while current_node and count != index:
             current_node = current_node.next
             count += 1
-        return current_node.data if current_node else None
+        if data_only and current_node:
+            return current_node.data
+        return current_node
 
-    def get_node(self, index: int) -> Optional[Node]:
+    def get_key(self, key: object, data_only: bool = False) -> Optional[Node] | object:
         current_node = self.head
-        count = 0
-        while current_node and count != index:
+        while current_node and current_node.data != key:
             current_node = current_node.next
-            count += 1
+        if data_only and current_node:
+            return current_node.data
         return current_node
 
     def len_iterative(self) -> int:
@@ -117,11 +119,11 @@ if __name__ == "__main__":
     linked_list.print_list()
     linked_list.prepend("E")
     linked_list.print_list()
-    linked_list.insert_node_at_index(1, "F")
+    linked_list.insert_node_index(1, "F")
     linked_list.print_list()
     linked_list.delete_node("B")
     linked_list.print_list()
-    linked_list.delete_node_at_pos(2)
+    linked_list.delete_node_index(2)
     linked_list.print_list()
     print(linked_list.len_iterative())
     print(linked_list.len_recursive(linked_list.head))
