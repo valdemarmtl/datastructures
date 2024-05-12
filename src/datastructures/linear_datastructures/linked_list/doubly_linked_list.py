@@ -125,6 +125,13 @@ class DoublyLinkedList:
             return 0
         return 1 + self.len_recursive(node.next)
 
+    def print_list(self):
+        current_node = self.head
+        while current_node:
+            print(current_node.data, end=" -> ")
+            current_node = current_node.next
+        print("None")
+
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
