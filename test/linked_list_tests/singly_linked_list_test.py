@@ -76,6 +76,24 @@ class TestSinglyLinkedList:
         assert data == 2
         assert isinstance(data, object)
 
+    def test_get_key(self):
+        linked_list = SinglyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        node = linked_list.get_key(2)
+        assert isinstance(node, Node)
+        assert node.data == 2
+
+    def test_get_key_data_only(self):
+        linked_list = SinglyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        data = linked_list.get_key(2, True)
+        assert data == 2
+        assert isinstance(data, object)
+
     def test_len_iterative(self):
         linked_list = SinglyLinkedList()
         linked_list.append(1)
