@@ -71,3 +71,11 @@ class SinglyLinkedList:
                 return
             prev_node.next = current_node.next
             current_node = None
+
+    def len_iterative(self) -> int:
+        count = 0
+        current_node = self.head
+        while current_node:
+            count += 1
+            current_node = current_node.next
+        return count
