@@ -31,7 +31,7 @@ class TestSinglyLinkedList:
         linked_list.append(1)
         linked_list.append(2)
         linked_list.append(3)
-        linked_list.insert_node_at_pos(1, 4)
+        linked_list.insert_node_at_index(1, 4)
         node = linked_list.get_node(1)
         assert node.data == 4
 
