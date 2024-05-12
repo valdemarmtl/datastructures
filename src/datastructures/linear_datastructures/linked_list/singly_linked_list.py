@@ -92,3 +92,21 @@ class SinglyLinkedList:
             current_node = current_node.next
         print()
 
+
+if __name__ == "__main__":
+    linked_list = SinglyLinkedList()
+    linked_list.append("A")
+    linked_list.append("B")
+    linked_list.append("C")
+    linked_list.append("D")
+    linked_list.print_list()
+    linked_list.prepend("E")
+    linked_list.print_list()
+    linked_list.insert_node_at_pos(1, "F")
+    linked_list.print_list()
+    linked_list.delete_node("B")
+    linked_list.print_list()
+    linked_list.delete_node_at_pos(2)
+    linked_list.print_list()
+    print(linked_list.len_iterative())
+    print(linked_list.len_recursive(linked_list.head))
