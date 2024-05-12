@@ -22,6 +22,15 @@ class DoublyLinkedList:
         new_node.prev = self.tail
         self.tail = new_node
 
+    def prepend(self, data: object):
+        if self.head is None:
+            self._add_first_node(data)
+            return
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head.prev = new_node
+        self.head = new_node
+
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
