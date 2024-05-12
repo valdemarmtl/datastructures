@@ -94,6 +94,13 @@ class DoublyLinkedList:
             current_node.next.prev = prev_node
         current_node = None
 
+    def get_key(self, key: object, data_only: bool = False) -> Optional[Node] | object:
+        current_node = self.head
+        while current_node and current_node.data != key:
+            current_node = current_node.next
+        if data_only and current_node:
+            return current_node.data
+        return current_node
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
