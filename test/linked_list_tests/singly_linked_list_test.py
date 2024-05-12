@@ -23,16 +23,16 @@ class TestSinglyLinkedList:
         linked_list.append(1)
         linked_list.append(2)
         linked_list.append(3)
-        end_node = linked_list.get_node(2)
+        end_node = linked_list.get_index(2)
         assert end_node.data == 3
 
-    def test_insert_at_pos(self):
+    def test_insert_node_index(self):
         linked_list = SinglyLinkedList()
         linked_list.append(1)
         linked_list.append(2)
         linked_list.append(3)
-        linked_list.insert_node_at_index(1, 4)
-        node = linked_list.get_node(1)
+        linked_list.insert_node_index(1, 4)
+        node = linked_list.get_index(1)
         assert node.data == 4
 
     def test_delete_node(self):
@@ -41,7 +41,7 @@ class TestSinglyLinkedList:
         linked_list.append(2)
         linked_list.append(3)
         linked_list.delete_node(2)
-        node = linked_list.get_node(1)
+        node = linked_list.get_index(1)
         assert node.data == 3
 
     def test_delete_node_at_pos(self):
@@ -49,9 +49,50 @@ class TestSinglyLinkedList:
         linked_list.append(1)
         linked_list.append(2)
         linked_list.append(3)
-        linked_list.delete_node_at_pos(1)
-        node = linked_list.get_node(1)
+        linked_list.delete_node_index(1)
+        node = linked_list.get_index(1)
         assert node.data == 3
+
+    def test_delete_node__empty(self):
+        linked_list = SinglyLinkedList()
+        linked_list.delete_node(1)
+        assert linked_list.head is None
+
+    def test_get_index(self):
+        linked_list = SinglyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        node = linked_list.get_index(1)
+        assert isinstance(node, Node)
+        assert node.data == 2
+
+    def test_get_index_data_only(self):
+        linked_list = SinglyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        data = linked_list.get_index(1, True)
+        assert data == 2
+        assert isinstance(data, object)
+
+    def test_get_key(self):
+        linked_list = SinglyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        node = linked_list.get_key(2)
+        assert isinstance(node, Node)
+        assert node.data == 2
+
+    def test_get_key_data_only(self):
+        linked_list = SinglyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        data = linked_list.get_key(2, True)
+        assert data == 2
+        assert isinstance(data, object)
 
     def test_len_iterative(self):
         linked_list = SinglyLinkedList()
