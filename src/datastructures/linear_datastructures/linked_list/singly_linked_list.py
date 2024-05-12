@@ -41,3 +41,16 @@ class SinglyLinkedList:
         prev_node.next = new_node
         new_node.next = current_node
 
+    def delete_node(self, key: object):
+        current_node = self.head
+        if current_node and current_node.data == key:
+            self.head = current_node.next
+            current_node = None
+            return
+        while current_node and current_node.data != key:
+            prev_node = current_node
+            current_node = current_node.next
+        if current_node is None:
+            return
+        prev_node.next = current_node.next
+        current_node = None
