@@ -133,3 +133,10 @@ class TestDoublyLinkedList:
         linked_list = DoublyLinkedList()
         assert linked_list.len_iterative() == 0
 
+    def test_len_recursive(self):
+        linked_list = DoublyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        assert linked_list.len_recursive(linked_list.head) == 3
+
