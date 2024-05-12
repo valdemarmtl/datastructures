@@ -122,3 +122,10 @@ class TestDoublyLinkedList:
         assert data == 2
         assert isinstance(data, object)
 
+    def test_len_iterative(self):
+        linked_list = DoublyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        assert linked_list.len_iterative() == 3
+
