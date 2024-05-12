@@ -27,3 +27,12 @@ class TestDoublyLinkedList:
         linked_list.append(3)
         assert linked_list.tail.data == 3
 
+    def test_insert_node_index(self):
+        linked_list = DoublyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        linked_list.insert_node_index(1, 4)
+        node = linked_list.get_index(1)
+        assert node.data == 4
+
