@@ -91,3 +91,12 @@ class TestDoublyLinkedList:
         linked_list = DoublyLinkedList()
         assert linked_list.get_key(1) is None
 
+    def test_get_key__data_only(self):
+        linked_list = DoublyLinkedList()
+        linked_list.append(1)
+        linked_list.append(2)
+        linked_list.append(3)
+        data = linked_list.get_key(2, data_only=True)
+        assert data == 2
+        assert isinstance(data, object)
+
