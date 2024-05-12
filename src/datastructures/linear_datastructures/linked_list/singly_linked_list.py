@@ -11,3 +11,13 @@ class SinglyLinkedList:
 
     def __init__(self):
         self.head: Optional[Node] = None
+
+    def append(self, data: object):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        last_node = self.head
+        while last_node.next:
+            last_node = last_node.next
+        last_node.next = new_node
