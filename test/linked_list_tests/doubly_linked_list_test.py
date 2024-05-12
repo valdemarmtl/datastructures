@@ -13,3 +13,10 @@ class TestDoublyLinkedList:
         assert linked_list.head is None
         assert linked_list.tail is None
 
+    def test_insert_at_beginning(self):
+        linked_list = DoublyLinkedList()
+        linked_list.prepend(1)
+        linked_list.prepend(2)
+        linked_list.prepend(3)
+        assert linked_list.head.data == 3
+
