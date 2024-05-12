@@ -149,3 +149,25 @@ class DoublyLinkedList:
         self.head = new_node
         self.tail = new_node
 
+
+if __name__ == "__main__":
+    linked_list = DoublyLinkedList()
+    linked_list.append(1)
+    linked_list.append(2)
+    linked_list.append(3)
+    linked_list.print_list()
+    linked_list.prepend(0)
+    linked_list.print_list()
+    linked_list.insert_node_index(1, 4)
+    linked_list.print_list()
+    linked_list.delete_node(2)
+    linked_list.print_list()
+    linked_list.delete_node_index(0)
+    linked_list.print_list()
+    linked_list.delete_node(3)
+    linked_list.print_list()
+    linked_list.delete_node(1)
+    linked_list.print_list()
+    linked_list.delete_node(0)
+    linked_list.print_list()
+    linked_list.delete_node(1)
