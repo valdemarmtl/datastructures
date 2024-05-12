@@ -85,3 +85,10 @@ class SinglyLinkedList:
             return 0
         return 1 + self.len_recursive(node.next)
 
+    def print_list(self):
+        current_node = self.head
+        while current_node:
+            print(current_node.data, end=' ')
+            current_node = current_node.next
+        print()
+
