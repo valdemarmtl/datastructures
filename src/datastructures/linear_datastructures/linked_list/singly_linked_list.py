@@ -54,3 +54,20 @@ class SinglyLinkedList:
             return
         prev_node.next = current_node.next
         current_node = None
+
+    def delete_node_at_pos(self, pos: int):
+        if self.head:
+            current_node = self.head
+            if pos == 0:
+                self.head = current_node.next
+                current_node = None
+                return
+            count = 0
+            while current_node and count != pos:
+                prev_node = current_node
+                current_node = current_node.next
+                count += 1
+            if current_node is None:
+                return
+            prev_node.next = current_node.next
+            current_node = None
