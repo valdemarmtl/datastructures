@@ -140,3 +140,6 @@ class TestDoublyLinkedList:
         linked_list.append(3)
         assert linked_list.len_recursive(linked_list.head) == 3
 
+    def test_len_recursive__empty(self):
+        linked_list = DoublyLinkedList()
+        assert linked_list.len_recursive(linked_list.head) == 0
