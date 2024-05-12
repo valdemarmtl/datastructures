@@ -72,3 +72,9 @@ class TestDoublyLinkedList:
         assert linked_list.head is None
         assert linked_list.tail is None
 
+    def test_delete_node_index__empty(self):
+        linked_list = DoublyLinkedList()
+        linked_list.delete_node_index(1)
+        assert linked_list.head is None
+        assert linked_list.tail is None
+
