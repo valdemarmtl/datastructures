@@ -10,3 +10,10 @@ class TestSinglyLinkedList:
     def test_init(self):
         linked_list = SinglyLinkedList()
         assert linked_list.head is None
+
+    def test_insert_at_beginning(self):
+        linked_list = SinglyLinkedList()
+        linked_list.prepend(1)
+        linked_list.prepend(2)
+        linked_list.prepend(3)
+        assert linked_list.head.data == 3
