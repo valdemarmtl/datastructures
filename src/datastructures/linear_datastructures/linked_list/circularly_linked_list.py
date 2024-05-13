@@ -12,3 +12,15 @@ class CircularlyLinkedList:
         self.head: Optional[Node] = None
         self.size = 0
 
+    def append(self, data: object):
+        if self.head is None:
+            return self._add_first_node(data)
+
+        new_node = Node(data)
+        current_node = self.head
+        while current_node.next != self.head:
+            current_node = current_node.next
+        current_node.next = new_node
+        new_node.next = self.head
+        self.size += 1
+
