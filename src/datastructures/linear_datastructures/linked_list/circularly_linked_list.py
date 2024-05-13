@@ -54,3 +54,20 @@ class CircularlyLinkedList:
         new_node.next = current_node
         self.size += 1
 
+    def delete_node(self, key: object):
+        if self.head is None:
+            return
+
+        current_node = self.head
+        prev_node = None
+        while current_node.data != key:
+            if current_node.next == self.head:
+                return
+            prev_node = current_node
+            current_node = current_node.next
+        if current_node == self.head:
+            self.head = current_node.next
+        else:
+            prev_node.next = current_node.next
+        self.size -= 1
+
