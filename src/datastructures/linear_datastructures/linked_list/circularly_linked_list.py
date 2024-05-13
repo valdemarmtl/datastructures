@@ -90,3 +90,13 @@ class CircularlyLinkedList:
             prev_node.next = current_node.next
         self.size -= 1
 
+    def get_key(self, key: object, data_only: bool = False) -> Optional[Node] | object:
+        current_node = self.head
+        while current_node and current_node.data != key:
+            if current_node.next == self.head:
+                return None
+            current_node = current_node.next
+        if data_only and current_node:
+            return current_node.data
+        return current_node
+
