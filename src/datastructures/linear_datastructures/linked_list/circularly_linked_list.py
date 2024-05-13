@@ -100,3 +100,16 @@ class CircularlyLinkedList:
             return current_node.data
         return current_node
 
+    def get_index(self, index: int, data_only: bool = False) -> Node | object:
+        if index >= self.size:
+            raise IndexError("Index out of range")
+
+        current_node = self.head
+        count = 0
+        while count != index:
+            current_node = current_node.next
+            count += 1
+        if data_only and current_node:
+            return current_node.data
+        return current_node
+
