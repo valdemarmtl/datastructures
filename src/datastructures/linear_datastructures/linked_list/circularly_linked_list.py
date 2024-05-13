@@ -113,3 +113,14 @@ class CircularlyLinkedList:
             return current_node.data
         return current_node
 
+    def print_list(self):
+        if self.head is None:
+            return
+        current_node = self.head
+        while True:
+            print(current_node.data, end=" ")
+            current_node = current_node.next
+            if current_node == self.head:
+                break
+        print()
+
