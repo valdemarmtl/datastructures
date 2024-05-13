@@ -71,3 +71,22 @@ class CircularlyLinkedList:
             prev_node.next = current_node.next
         self.size -= 1
 
+    def delete_node_index(self, index: int):
+        if index >= self.size:
+            raise IndexError("Index out of range")
+        if self.head is None:
+            return
+
+        current_node = self.head
+        prev_node = None
+        count = 0
+        while count != index:
+            prev_node = current_node
+            current_node = current_node.next
+            count += 1
+        if current_node == self.head:
+            self.head = current_node.next
+        else:
+            prev_node.next = current_node.next
+        self.size -= 1
+
