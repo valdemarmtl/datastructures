@@ -66,10 +66,10 @@ class CircularlyLinkedList:
             prev_node = current_node
             current_node = current_node.next
         if current_node == self.head:
-            self.head = current_node.next
+            self._remove_head()
         else:
             prev_node.next = current_node.next
-        self.size -= 1
+            self.size -= 1
 
     def delete_node_index(self, index: int):
         if index >= self.size:
@@ -85,10 +85,10 @@ class CircularlyLinkedList:
             current_node = current_node.next
             count += 1
         if current_node == self.head:
-            self.head = current_node.next
+            self._remove_head()
         else:
             prev_node.next = current_node.next
-        self.size -= 1
+            self.size -= 1
 
     def get_key(self, key: object, data_only: bool = False) -> Optional[Node] | object:
         current_node = self.head
@@ -128,3 +128,19 @@ class CircularlyLinkedList:
         new_node = Node(data)
         self.head = new_node
         self.size += 1
+
+    def _set_tail_next_to_new_head(self, new_head: Node):
+        current_node = self.head
+        while current_node.next != self.head:
+            current_node = current_node.next
+        current_node.next = new_head
+
+    def _remove_head(self):
+        if self.size == 1:
+            self.head = None
+        else:
+            self._set_tail_next_to_new_head(self.head.next)
+            self.head = self.head.next
+        self.size -= 1
+
+
