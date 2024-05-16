@@ -78,3 +78,9 @@ class TestCircularlyLinkedList:
         assert circular_linked_list.head is None
         assert circular_linked_list.size == 0
 
+    def test_delete_node__empty_list(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.delete_node(1)
+        assert circular_linked_list.head is None
+        assert circular_linked_list.size == 0
+
