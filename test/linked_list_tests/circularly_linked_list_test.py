@@ -11,3 +11,17 @@ class TestCircularlyLinkedList:
         circular_linked_list = CircularlyLinkedList()
         assert circular_linked_list.head is None
         assert circular_linked_list.size == 0
+
+    def test_append(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.append(1)
+        assert circular_linked_list.head.data == 1
+        assert circular_linked_list.head.next == circular_linked_list.head
+        assert circular_linked_list.size == 1
+
+        circular_linked_list.append(2)
+        assert circular_linked_list.head.data == 1
+        assert circular_linked_list.head.next.data == 2
+        assert circular_linked_list.head.next.next == circular_linked_list.head
+        assert circular_linked_list.size == 2
+
