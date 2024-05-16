@@ -171,3 +171,11 @@ class TestCircularlyLinkedList:
         circular_linked_list.append(2)
         node = circular_linked_list.get_index(1)
         assert node.data == 2
+
+    def test_get_index__data_only(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.append(1)
+        circular_linked_list.append(2)
+        data = circular_linked_list.get_index(1, data_only=True)
+        assert data == 2
+
