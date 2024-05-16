@@ -190,3 +190,8 @@ class TestCircularlyLinkedList:
         with pytest.raises(IndexError):
             circular_linked_list.get_index(1)
 
+    def test_get_index__negative_index(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.append(1)
+        with pytest.raises(IndexError):
+            circular_linked_list.get_index(-1)
