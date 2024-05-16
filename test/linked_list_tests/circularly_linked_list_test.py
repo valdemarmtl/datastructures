@@ -147,3 +147,10 @@ class TestCircularlyLinkedList:
         node = circular_linked_list.get_key(2)
         assert node.data == 2
 
+    def test_get_key__data_only(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.append(1)
+        circular_linked_list.append(2)
+        data = circular_linked_list.get_key(2, data_only=True)
+        assert data == 2
+
