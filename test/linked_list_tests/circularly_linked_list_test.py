@@ -179,3 +179,8 @@ class TestCircularlyLinkedList:
         data = circular_linked_list.get_index(1, data_only=True)
         assert data == 2
 
+    def test_get_index__empty_list(self):
+        circular_linked_list = CircularlyLinkedList()
+        with pytest.raises(IndexError):
+            circular_linked_list.get_index(1)
+
