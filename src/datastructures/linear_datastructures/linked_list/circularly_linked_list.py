@@ -145,3 +145,24 @@ class CircularlyLinkedList:
         self.size -= 1
 
 
+if __name__ == "__main__":
+    circularly_linked_list = CircularlyLinkedList()
+    circularly_linked_list.append(1)
+    circularly_linked_list.append(2)
+    circularly_linked_list.append(3)
+    circularly_linked_list.print_list()
+    circularly_linked_list.prepend(0)
+    circularly_linked_list.print_list()
+    circularly_linked_list.insert_node_index(1, 4)
+    circularly_linked_list.print_list()
+    circularly_linked_list.delete_node(2)
+    circularly_linked_list.print_list()
+    circularly_linked_list.delete_node_index(0)
+    circularly_linked_list.print_list()
+    circularly_linked_list.delete_node(3)
+    circularly_linked_list.print_list()
+    circularly_linked_list.delete_node(1)
+    circularly_linked_list.print_list()
+    circularly_linked_list.delete_node(0)
+    circularly_linked_list.print_list()
+    circularly_linked_list.delete_node(1)
