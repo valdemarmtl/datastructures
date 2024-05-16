@@ -165,3 +165,9 @@ class TestCircularlyLinkedList:
         node = circular_linked_list.get_key(2)
         assert node is None
 
+    def test_get_index(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.append(1)
+        circular_linked_list.append(2)
+        node = circular_linked_list.get_index(1)
+        assert node.data == 2
