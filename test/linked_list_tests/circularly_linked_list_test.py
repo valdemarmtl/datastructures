@@ -134,3 +134,9 @@ class TestCircularlyLinkedList:
         with pytest.raises(IndexError):
             circular_linked_list.delete_node_index(1)
 
+    def test_delete_node_index__negative_index(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.append(1)
+        with pytest.raises(IndexError):
+            circular_linked_list.delete_node_index(-1)
+
