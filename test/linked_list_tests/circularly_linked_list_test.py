@@ -159,3 +159,9 @@ class TestCircularlyLinkedList:
         node = circular_linked_list.get_key(1)
         assert node is None
 
+    def test_get_key__not_found(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.append(1)
+        node = circular_linked_list.get_key(2)
+        assert node is None
+
