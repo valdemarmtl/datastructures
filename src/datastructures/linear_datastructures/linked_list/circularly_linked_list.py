@@ -118,7 +118,7 @@ class CircularlyLinkedList:
             return
         current_node = self.head
         while True:
-            print(current_node.data, end=" ")
+            print(current_node.data, end=" -> ")
             current_node = current_node.next
             if current_node == self.head:
                 break
