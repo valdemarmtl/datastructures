@@ -154,3 +154,8 @@ class TestCircularlyLinkedList:
         data = circular_linked_list.get_key(2, data_only=True)
         assert data == 2
 
+    def test_get_key__empty_list(self):
+        circular_linked_list = CircularlyLinkedList()
+        node = circular_linked_list.get_key(1)
+        assert node is None
+
