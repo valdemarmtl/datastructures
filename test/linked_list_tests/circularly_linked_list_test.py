@@ -25,3 +25,16 @@ class TestCircularlyLinkedList:
         assert circular_linked_list.head.next.next == circular_linked_list.head
         assert circular_linked_list.size == 2
 
+    def test_prepend(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.prepend(1)
+        assert circular_linked_list.head.data == 1
+        assert circular_linked_list.head.next == circular_linked_list.head
+        assert circular_linked_list.size == 1
+
+        circular_linked_list.prepend(2)
+        assert circular_linked_list.head.data == 2
+        assert circular_linked_list.head.next.data == 1
+        assert circular_linked_list.head.next.next == circular_linked_list.head
+        assert circular_linked_list.size == 2
+
