@@ -72,7 +72,7 @@ class CircularlyLinkedList:
             self.size -= 1
 
     def delete_node_index(self, index: int):
-        if index >= self.size:
+        if index >= self.size or index < 0:
             raise IndexError("Index out of range")
         if self.head is None:
             return
@@ -101,7 +101,7 @@ class CircularlyLinkedList:
         return current_node
 
     def get_index(self, index: int, data_only: bool = False) -> Node | object:
-        if index >= self.size:
+        if index >= self.size or index < 0:
             raise IndexError("Index out of range")
 
         current_node = self.head
