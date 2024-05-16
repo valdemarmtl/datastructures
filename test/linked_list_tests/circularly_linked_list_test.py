@@ -140,3 +140,10 @@ class TestCircularlyLinkedList:
         with pytest.raises(IndexError):
             circular_linked_list.delete_node_index(-1)
 
+    def test_get_key(self):
+        circular_linked_list = CircularlyLinkedList()
+        circular_linked_list.append(1)
+        circular_linked_list.append(2)
+        node = circular_linked_list.get_key(2)
+        assert node.data == 2
+
