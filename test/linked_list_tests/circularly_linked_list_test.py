@@ -1,3 +1,5 @@
+import pytest
+
 from datastructures.linear_datastructures.linked_list.circularly_linked_list import CircularlyLinkedList, Node
 
 
@@ -120,4 +122,9 @@ class TestCircularlyLinkedList:
         circular_linked_list.delete_node_index(0)
         assert circular_linked_list.head is None
         assert circular_linked_list.size == 0
+
+    def test_delete_node_index__empty_list(self):
+        circular_linked_list = CircularlyLinkedList()
+        with pytest.raises(IndexError):
+            circular_linked_list.delete_node_index(1)
 
