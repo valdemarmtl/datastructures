@@ -127,6 +127,7 @@ class CircularlyLinkedList:
     def _add_first_node(self, data: object):
         new_node = Node(data)
         self.head = new_node
+        self.head.next = self.head
         self.size += 1
 
     def _set_tail_next_to_new_head(self, new_head: Node):
