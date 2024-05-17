@@ -1,3 +1,4 @@
+from typing import Optional
 
 from datastructures.linear_datastructures.linked_list.singly_linked_list import SinglyLinkedList
 
