@@ -39,3 +39,10 @@ class TestStack:
         assert stack.pop(0) == 1
         assert len(stack) == 0
 
+    def test_pop_empty(self):
+        stack = Stack()
+        try:
+            stack.pop()
+        except ValueError as e:
+            assert str(e) == "Stack is empty"
+
