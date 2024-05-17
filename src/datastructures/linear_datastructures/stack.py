@@ -20,3 +20,6 @@ class Stack:
     def peek(self) -> Optional[object]:
         return self.list_.head.data if self.list_.head else None
 
+    def get(self, index: int) -> Optional[object]:
+        return self.list_.get_index(index, data_only=True)
+
