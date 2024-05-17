@@ -67,3 +67,14 @@ class TestStack:
         stack.pop()
         assert stack.is_empty() is True
 
+    def test_len(self):
+        stack = Stack()
+        assert len(stack) == 0
+        stack.push(1)
+        assert len(stack) == 1
+        stack.push(2)
+        assert len(stack) == 2
+        stack.pop()
+        assert len(stack) == 1
+        stack.pop()
+        assert len(stack) == 0
