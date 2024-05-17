@@ -23,3 +23,6 @@ class Stack:
     def get(self, index: int) -> Optional[object]:
         return self.list_.get_index(index, data_only=True)
 
+    def is_empty(self) -> bool:
+        return self.list_.head is None
+
