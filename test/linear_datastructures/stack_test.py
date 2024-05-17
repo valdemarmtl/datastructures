@@ -59,3 +59,11 @@ class TestStack:
         stack.pop()
         assert stack.peek() is None
 
+    def test_is_empty(self):
+        stack = Stack()
+        assert stack.is_empty() is True
+        stack.push(1)
+        assert stack.is_empty() is False
+        stack.pop()
+        assert stack.is_empty() is True
+
