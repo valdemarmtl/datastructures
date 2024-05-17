@@ -46,3 +46,16 @@ class TestStack:
         except ValueError as e:
             assert str(e) == "Stack is empty"
 
+    def test_peek(self):
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        assert stack.peek() == 3
+        stack.pop()
+        assert stack.peek() == 2
+        stack.pop()
+        assert stack.peek() == 1
+        stack.pop()
+        assert stack.peek() is None
+
