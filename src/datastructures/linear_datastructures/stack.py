@@ -6,3 +6,6 @@ class Stack:
     def __init__(self):
         self.list_ = SinglyLinkedList()
 
+    def push(self, data: object):
+        self.list_.prepend(data)
+
