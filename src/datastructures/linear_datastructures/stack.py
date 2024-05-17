@@ -26,3 +26,5 @@ class Stack:
     def is_empty(self) -> bool:
         return self.list_.head is None
 
+    def __len__(self) -> int:
+        return self.list_.len_iterative()
