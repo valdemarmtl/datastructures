@@ -16,3 +16,6 @@ class Stack:
         self.list_.delete_node_index(index)
         return data
 
+    def peek(self) -> Optional[object]:
+        return self.list_.head.data if self.list_.head else None
+
