@@ -19,3 +19,13 @@ class TestStack:
         assert stack.get(1) == 2
         assert stack.get(2) == 1
 
+    def test_pop(self):
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        assert stack.pop() == 3
+        assert stack.pop() == 2
+        assert stack.pop() == 1
+        assert len(stack) == 0
+
