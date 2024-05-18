@@ -37,8 +37,8 @@ class TestAdjacencyList:
     def test_add_directed_edge(self):
         total_vertices = 5
         list_of_edges = [(0, 1), (1, 3), (2, 3), (3, 3), (3, 4), (4, 1)]
-        adj_list = AdjacencyList(total_vertices)
 
+        adj_list = AdjacencyList(total_vertices)
         for edge in list_of_edges:
             adj_list.add_directed_edge(*edge)
 
