@@ -13,3 +13,14 @@ class TestAdjacencyMatrix:
             assert len(adj_matrix.matrix[0]) == total_vertices
         else:
             assert adj_matrix.matrix == []
+
+    def test_add_edge(self):
+        total_vertices = 5
+        list_of_edges = [(0, 1), (1, 3), (2, 3), (3, 3), (3, 4), (4, 1)]
+        adj_list = AdjacencyMatrix(total_vertices)
+        for edge in list_of_edges:
+            adj_list.add_edge(*edge)
+
+        assert adj_list.matrix == [[0, 1, 0, 0, 0], [1, 0, 0, 1, 1], [0, 0, 0, 1, 0], [0, 1, 1, 1, 1], [0, 1, 0, 1, 0]]
+        assert adj_list.total_vertices == total_vertices
+
