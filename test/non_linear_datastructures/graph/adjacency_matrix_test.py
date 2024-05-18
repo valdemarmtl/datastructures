@@ -24,3 +24,16 @@ class TestAdjacencyMatrix:
         assert adj_list.matrix == [[0, 1, 0, 0, 0], [1, 0, 0, 1, 1], [0, 0, 0, 1, 0], [0, 1, 1, 1, 1], [0, 1, 0, 1, 0]]
         assert adj_list.total_vertices == total_vertices
 
+    def test_remove_edge(self):
+        total_vertices = 5
+        list_of_edges = [(0, 1), (1, 3), (2, 3), (3, 3), (3, 4), (4, 1)]
+        adj_list = AdjacencyMatrix(total_vertices)
+        for edge in list_of_edges:
+            adj_list.add_edge(*edge)
+
+        adj_list.remove_edge(0, 1)
+        adj_list.remove_edge(3, 4)
+        adj_list.remove_edge(4, 1)
+
+        assert adj_list.matrix == [[0, 0, 0, 0, 0], [0, 0, 0, 1, 0], [0, 0, 0, 1, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0]]
+        assert adj_list.total_vertices == total_vertices
