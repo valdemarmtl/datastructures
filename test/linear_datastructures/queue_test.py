@@ -51,3 +51,11 @@ class TestQueue:
 
         assert queue.peek() is None
 
+    def test_is_empty(self):
+        queue = Queue()
+
+        assert queue.is_empty()
+
+        queue.enqueue(1)
+
+        assert not queue.is_empty()
