@@ -15,3 +15,6 @@ class Queue:
         self.list_.delete_node_index(0)
         return data
 
+    def peek(self) -> object:
+        return self.list_.head.data if self.list_.head else None
+
