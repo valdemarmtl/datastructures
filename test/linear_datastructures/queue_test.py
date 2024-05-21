@@ -10,3 +10,14 @@ class TestQueue:
 
         assert queue.list_.head is None
         assert isinstance(queue.list_, SinglyLinkedList)
+
+    def test_enqueue(self):
+        queue = Queue()
+        queue.enqueue(1)
+
+        assert queue.list_.head.data == 1
+
+        queue.enqueue(2)
+
+        assert queue.list_.head.next.data == 2
+
