@@ -8,3 +8,10 @@ class Queue:
     def enqueue(self, data: object) -> None:
         self.list_.append(data)
 
+    def dequeue(self) -> object:
+        if self.is_empty():
+            raise ValueError("Queue is empty")
+        data = self.list_.get_index(0, data_only=True)
+        self.list_.delete_node_index(0)
+        return data
+
