@@ -21,3 +21,11 @@ class TestQueue:
 
         assert queue.list_.head.next.data == 2
 
+    def test_dequeue(self):
+        queue = Queue()
+        queue.enqueue(1)
+        queue.enqueue(2)
+
+        assert queue.dequeue() == 1
+        assert queue.list_.head.data == 2
+
