@@ -46,3 +46,8 @@ class TestQueue:
 
         assert queue.peek() == 1
 
+    def test_peek__empty(self):
+        queue = Queue()
+
+        assert queue.peek() is None
+
