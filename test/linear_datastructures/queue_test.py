@@ -29,3 +29,10 @@ class TestQueue:
         assert queue.dequeue() == 1
         assert queue.list_.head.data == 2
 
+    def test_dequeue_empty(self):
+        queue = Queue()
+        with pytest.raises(ValueError) as e:
+            queue.dequeue()
+
+            assert str(e) == "Queue is empty"
+
