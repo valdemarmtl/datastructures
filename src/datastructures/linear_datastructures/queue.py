@@ -18,3 +18,5 @@ class Queue:
     def peek(self) -> object:
         return self.list_.head.data if self.list_.head else None
 
+    def is_empty(self) -> bool:
+        return self.list_.head is None
