@@ -36,3 +36,13 @@ class TestQueue:
 
             assert str(e) == "Queue is empty"
 
+    def test_peek(self):
+        queue = Queue()
+        queue.enqueue(1)
+
+        assert queue.peek() == 1
+
+        queue.enqueue(2)
+
+        assert queue.peek() == 1
+
